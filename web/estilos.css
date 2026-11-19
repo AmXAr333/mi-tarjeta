@@ -1,0 +1,255 @@
+/* ✏️ Cambia --acento para personalizar el color de tu gafete */
+:root {
+  --acento: #6b3fd4;
+  --acento-enlace: #6b3fd4;
+  --acento-texto: #ffffff;
+  --fondo: #eeebf5;
+  --papel: #ffffff;
+  --tinta: #1f1a33;
+  --tinta-suave: #615a76;
+  --borde: #dad3e8;
+  --burbuja-yo: #e7defb;
+  color-scheme: light;
+
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --acento: #7a55e2;
+    --acento-enlace: #bba5ff;
+    --fondo: #15121f;
+    --papel: #211c2f;
+    --tinta: #ece8f5;
+    --tinta-suave: #aca4c0;
+    --borde: #352d49;
+    --burbuja-yo: #36295e;
+    color-scheme: dark;
+  }
+}
+
+*, *::before, *::after { box-sizing: inherit; }
+
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--tinta);
+  font-family: "Atkinson Hyperlegible", system-ui, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.55;
+}
+
+.pagina {
+  max-width: 34rem;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 4rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2.5rem;
+}
+
+/* ---------- Gafete ---------- */
+.gafete {
+  background: var(--papel);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  border: 1px solid var(--borde);
+  box-shadow: 0 1.5rem 3rem -1.5rem rgba(45, 20, 90, .35);
+}
+
+.gafete__banda {
+  background: var(--acento);
+  color: var(--acento-texto);
+  padding: 1.1rem 1.5rem .9rem;
+  text-align: center;
+}
+
+.gafete__saludo {
+  margin: 0;
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 9vw, 2.75rem);
+  line-height: 1;
+  letter-spacing: -.02em;
+}
+
+.gafete__cuerpo {
+  padding: 1.25rem 1.5rem 1.75rem;
+  text-align: center;
+}
+
+.gafete__nombre {
+  margin: 0 0 .25rem;
+  font-family: "Caveat", "Segoe Print", cursive;
+  font-weight: 600;
+  font-size: clamp(3rem, 14vw, 4.25rem);
+  line-height: 1.05;
+  border-bottom: 2px dashed var(--borde);
+  padding-bottom: .5rem;
+}
+
+.gafete__rol {
+  margin: .75rem 0 .25rem;
+  font-weight: 700;
+}
+
+.gafete__frase {
+  margin: 0 auto 1.25rem;
+  color: var(--tinta-suave);
+  max-width: 28rem;
+}
+
+.intereses {
+  list-style: none;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .5rem;
+}
+
+.intereses li {
+  border: 1.5px solid var(--borde);
+  border-radius: 999px;
+  padding: .2rem .8rem;
+  font-size: .95rem;
+}
+
+.enlaces {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.enlaces a {
+  color: var(--acento-enlace);
+  font-weight: 700;
+  text-underline-offset: .2em;
+}
+
+/* ---------- Chat ---------- */
+.chat__titulo {
+  margin: 0;
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: -.01em;
+}
+
+.chat__nota {
+  margin: .25rem 0 1rem;
+  color: var(--tinta-suave);
+  font-size: .9rem;
+}
+
+.mensajes {
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+  margin-bottom: 1rem;
+}
+
+.mensaje {
+  max-width: 85%;
+  padding: .6rem .9rem;
+  border-radius: 1rem;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.mensaje--yo {
+  align-self: flex-end;
+  background: var(--burbuja-yo);
+  border-bottom-right-radius: .3rem;
+}
+
+.mensaje--bot {
+  align-self: flex-start;
+  background: var(--papel);
+  border: 1px solid var(--borde);
+  border-bottom-left-radius: .3rem;
+}
+
+.mensaje--error {
+  align-self: stretch;
+  max-width: none;
+  border: 1px solid #c4413a;
+  color: #c4413a;
+  background: transparent;
+}
+
+.escribiendo { color: var(--tinta-suave); font-style: italic; }
+
+.sugerencias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-bottom: .75rem;
+}
+
+.sugerencias[hidden] { display: none; }
+
+.sugerencias button {
+  font: inherit;
+  font-size: .95rem;
+  background: transparent;
+  color: var(--tinta);
+  border: 1.5px dashed var(--acento);
+  border-radius: 999px;
+  padding: .3rem .85rem;
+  cursor: pointer;
+}
+
+.formulario {
+  display: flex;
+  gap: .5rem;
+}
+
+.formulario input {
+  flex: 1;
+  min-width: 0;
+  font: inherit;
+  padding: .7rem .9rem;
+  border-radius: .75rem;
+  border: 1.5px solid var(--borde);
+  background: var(--papel);
+  color: var(--tinta);
+}
+
+.formulario button {
+  font: inherit;
+  font-weight: 700;
+  padding: .7rem 1.1rem;
+  border: 0;
+  border-radius: .75rem;
+  background: var(--acento);
+  color: var(--acento-texto);
+  cursor: pointer;
+}
+
+.formulario button:disabled { opacity: .55; cursor: wait; }
+
+:focus-visible {
+  outline: 3px solid var(--acento);
+  outline-offset: 2px;
+}
+
+.solo-lectores {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .gafete { animation: colgar .6s ease-out both; }
+  @keyframes colgar {
+    from { transform: translateY(-1rem); opacity: 0; }
+    to   { transform: none; opacity: 1; }
+  }
+}

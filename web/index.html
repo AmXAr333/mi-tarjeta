@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Mi tarjeta de presentación</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:wght@600;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <main class="pagina">
+
+    <!-- Tarjeta tipo gafete "Hola, soy…" -->
+    <article class="gafete" aria-labelledby="nombre">
+      <header class="gafete__banda">
+        <p class="gafete__saludo">Hola, soy</p>
+      </header>
+      <div class="gafete__cuerpo">
+        <h1 id="nombre" class="gafete__nombre">Cargando…</h1>
+        <p id="rol" class="gafete__rol"></p>
+        <p id="frase" class="gafete__frase"></p>
+        <ul id="intereses" class="intereses" aria-label="Intereses"></ul>
+        <nav id="enlaces" class="enlaces" aria-label="Mis enlaces"></nav>
+      </div>
+    </article>
+
+    <!-- Chat con el asistente -->
+    <section class="chat" aria-labelledby="titulo-chat">
+      <h2 id="titulo-chat" class="chat__titulo">Pregúntale a mi asistente</h2>
+      <p class="chat__nota">Responde con IA a partir de lo que comparto en esta tarjeta. Puede equivocarse.</p>
+
+      <div id="mensajes" class="mensajes" role="log" aria-live="polite"></div>
+
+      <div id="sugerencias" class="sugerencias"></div>
+
+      <form id="formulario" class="formulario">
+        <label for="pregunta" class="solo-lectores">Tu pregunta</label>
+        <input id="pregunta" type="text" maxlength="500" autocomplete="off" placeholder="Escribe tu pregunta…" required>
+        <button id="enviar" type="submit">Preguntar</button>
+      </form>
+    </section>
+
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

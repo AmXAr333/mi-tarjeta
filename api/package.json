@@ -1,0 +1,12 @@
+{
+  "name": "tarjeta-chatbot-api",
+  "version": "1.0.0",
+  "description": "API de la tarjeta de presentación con chatbot (Azure Functions)",
+  "main": "src/functions/*.js",
+  "scripts": {
+    "start": "func start"
+  },
+  "dependencies": {
+    "@azure/functions": "^4.5.0"
+  }
+}

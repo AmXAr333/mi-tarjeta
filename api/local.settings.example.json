@@ -1,0 +1,10 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "AZURE_OPENAI_ENDPOINT": "https://TU-RECURSO.openai.azure.com",
+    "AZURE_OPENAI_KEY": "pega-aqui-tu-clave-SOLO-en-local.settings.json",
+    "AZURE_OPENAI_DEPLOYMENT": "nombre-de-tu-implementacion",
+    "AZURE_OPENAI_API_VERSION": "2024-10-21"
+  }
+}
